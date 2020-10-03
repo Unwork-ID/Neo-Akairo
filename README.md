@@ -1,9 +1,9 @@
 # Neo-Akairo
-✨ Neo akairo Bot Discord Writen In Typescript with module [Discord-Akairo](https://discord-akairo.github.io/) And [Discord.JS](https://discord.js.org) Made With ♥ By tokisaki13
+✨ Neo akairo Bot Discord Writen In Typescript with module [Discord-Akairo](https://github.com/discord-akairo/) And [Discord.JS](https://github.com/discordjs) Made With ♥ By tokisaki13
 
 ![NeoAkairo](https://cdn.discordapp.com/attachments/713193780932771891/750784429701726268/enterprise-new.png)
 
-## Self Hosting Instruction
+# Self Hosting Instruction
 
 * First You need `Lavalink Server` [here](https://github.com/Frederikam/Lavalink) for reference of Lavalink Server
 * Make sure you have TypeScript installed on your PC/Laptop 
@@ -11,7 +11,7 @@
 * Then install the dependencise with `npm install --save`
 * If all done you can run `npm run dev`
 
-## Modules
+# Modules
 ```
 -> Dev Dependencies
 * @types/node
@@ -28,14 +28,14 @@
 * node-spotify-api
 ```
 
-# Feature
+# Features
 * Music player with powerfull bass and stabil sound
 * Spotify player ( Still on development )
 
 # Author 
-* [Discord-Akairo](https://github.com/1Computer1)
-* [Discord.js v12 (stable)](https://discord.js.org)
-* [Erela.js](https://projects.solaris.codes/)
+* [Discord-Akairo](https://github.com/discord-akairo)
+* [Discord.js v12 (stable)](https://github.com/discordjs)
+* [Erela.js](https://github.com/Solaris9/erela.js)
 * [tokisaki13](https://github.com/tokisaki13)
 * Don't forget to give stars on this project
 
