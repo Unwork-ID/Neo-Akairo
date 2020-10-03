@@ -1,0 +1,5 @@
+export let prefix: string = "YOUR PREFIX";
+export let owners: string[] = ["YOUR ID"];
+export let token: string = "YOUT BOT TOKEN;
+export let SpotifyClientID: string = "YOUR SPOTIFY CLIENT ID";
+export let SpotifyClientSecret: string = "YOUR SPOTIFY CLIENT SECRET";
