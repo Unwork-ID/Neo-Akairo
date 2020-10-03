@@ -1,11 +1,10 @@
 import { AkairoClient, CommandHandler, ListenerHandler } from 'discord-akairo';
-import { Message } from 'discord.js';
+import { Message, Constants } from 'discord.js';
 import { join } from 'path';
 import { Manager } from 'erela.js'
 
 
 import { prefix, owners, token } from '../config';
-import { Constants } from 'discord.js';
 import Erela from '../Server/Erela';
 
 
