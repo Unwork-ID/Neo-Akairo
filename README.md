@@ -1,5 +1,5 @@
 # Neo-Akairo
-✨ Neo akairo Bot Discord Writen In Typescript with module Discord-Akairo And Discord.JS Made With ♥ By tokisaki13
+✨ Neo akairo Bot Discord Writen In Typescript with module [Discord-Akairo](https://discord-akairo.github.io/) And [Discord.JS](https://discord.js.org) Made With ♥ By tokisaki13
 
 ![NeoAkairo](https://cdn.discordapp.com/attachments/713193780932771891/750784429701726268/enterprise-new.png)
 
