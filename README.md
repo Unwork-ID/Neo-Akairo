@@ -5,8 +5,8 @@
 
 ## Selft Hosting Intruction
 
--> First You need `Lavalink Server` [here](https://github.com/Frederikam/Lavalink) for reference of Lavalink Server
--> Make sure you have TypeScript installed on your PC/Laptop 
--> To install TypeScript run `npm install -g typescript`
--> Then install the dependencise with `npm install --save`
--> If all done you can run `npm run dev`
+1. First You need `Lavalink Server` [here](https://github.com/Frederikam/Lavalink) for reference of Lavalink Server
+2. Make sure you have TypeScript installed on your PC/Laptop 
+3. To install TypeScript run `npm install -g typescript`
+4. Then install the dependencise with `npm install --save`
+5. If all done you can run `npm run dev`
