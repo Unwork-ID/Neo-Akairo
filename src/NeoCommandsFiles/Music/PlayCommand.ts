@@ -2,7 +2,6 @@ import Client from '../../Client/NeoClient';
 
 import { Command } from 'discord-akairo';
 import { Message, MessageEmbed } from 'discord.js';
-import { platform } from 'os';
 
 export default class PlayCommand extends Command {
     client: Client
@@ -30,7 +29,8 @@ export default class PlayCommand extends Command {
                         retry: (msg: Message) => `**${msg.author.tag}** Please provide < link | title | playlist >`
                     }
                 }
-            ]
+            ],
+            channel: "guild"
         })
         this.client = client
     }

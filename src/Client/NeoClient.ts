@@ -43,15 +43,14 @@ export default class Neo extends AkairoClient {
         defaultCooldown: 6e4,
         argumentDefaults: {
             prompt: {
-                modifyStart: (_: Message, str: string): string => `${str}\n\nType \`cancell\` to cancel the command.`,
-                modifyRetry: (_: Message, str: string): string => `${str}\n\nType \`cancell\` to cancel the command.`,
+                modifyStart: (_: Message, str: string): string => `${str}\n\nType \`cancel\` to cancel the command.`,
+                modifyRetry: (_: Message, str: string): string => `${str}\n\nType \`cancel\` to cancel the command.`,
                 timeout: "You took to loong, the command has now been cancelled.",
                 ended: "You exceeded the maximum amout of trie, this command has now been cancelled.",
                 cancel: "This command has been cancelled.",
                 retries: 3,
                 time: 3e4
             },
-            otherwise: ""
         },
         ignorePermissions: owners,
         ignoreCooldown: owners,
