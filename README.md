@@ -3,7 +3,7 @@
 
 ![NeoAkairo](https://cdn.discordapp.com/attachments/713193780932771891/750784429701726268/enterprise-new.png)
 
-## Selft Hosting Intruction
+## Selft Hosting Instruction
 
 * First You need `Lavalink Server` [here](https://github.com/Frederikam/Lavalink) for reference of Lavalink Server
 * Make sure you have TypeScript installed on your PC/Laptop 
