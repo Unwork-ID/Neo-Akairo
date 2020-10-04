@@ -31,6 +31,9 @@
 * erela.js-spotify
 * humanize-duration
 * node-spotify-api
+* moment
+* ms
+* snekfetch
 ~~~
 
 ## List of Commands
@@ -47,10 +50,14 @@
 | Stop    | stop | Stoping music currently play and leave | stop | stop |
 | Volume  | volume, volume | Turn up and down music volume | volume 0-100 | volume 50 |
 
-## Features
+## Music Features
 
-* Music player with powerfull bass and stabil sound
-* Spotify player
+![Erela](https://cdn.discordapp.com/attachments/713193780932771891/762348311679074304/68747470733a2f2f70726f6a656374732e736f6c617269732e636f6465732f6572656c616a732f696d616765732f7472616e.png)
+
+* This Bot is using erela.js for music player.
+* This music player have many supported format like as shown bellow
+* YouTube, Spotify, SoundCloud, Bandcamp, Vimeo, HTTP Urls, ACC, Opus or Vaorbis codecs
+
 
 ## Author
 

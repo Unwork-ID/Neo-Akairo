@@ -38,6 +38,9 @@
     "erela.js": "^2.0.1",
     "erela.js-spotify": "^1.0.2",
     "humanize-duration": "^3.24.0",
-    "node-spotify-api": "^1.1.1"
+    "moment": "^2.29.0",
+    "ms": "^2.1.2",
+    "node-spotify-api": "^1.1.1",
+    "snekfetch": "^4.0.4"
   }
 }

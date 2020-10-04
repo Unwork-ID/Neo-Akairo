@@ -15,15 +15,20 @@ declare module 'discord-akairo' {
     }
 }
 
+interface BotOption {
+    owners?: string | string[]
+}
 
 export default class Neo extends AkairoClient {
     music: Manager;
     erela: Erela;
+    config: BotOption;
     constructor() {
         super({
             disableMentions: 'everyone',
             partials: Object.values(Constants.PartialTypes)
         })
+        this.ownerID = owners
         this.erela = new Erela(this)
     }
 
