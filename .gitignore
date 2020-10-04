@@ -1,0 +1,14 @@
+#NODE MODULES FILES
+node_modules
+
+#ENV FILE
+.env
+
+#CONFIG FILE
+src/config.ts
+
+#FINISH FILE
+finish
+
+#NODES FILE
+src/ErelaConnector/nodes.ts
