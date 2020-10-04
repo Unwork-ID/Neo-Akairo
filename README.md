@@ -14,7 +14,7 @@
 
 ## Modules
 
-```js
+```bash
 -> Dev Dependencies
 * @types/node
 * dotenv
