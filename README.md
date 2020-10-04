@@ -36,7 +36,7 @@
 ## Features
 
 * Music player with powerfull bass and stabil sound
-* Spotify player ( Still on development )
+* Spotify player
 
 ## Author
 
