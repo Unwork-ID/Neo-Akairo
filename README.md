@@ -2,7 +2,7 @@
 
 ✨ Neo akairo Bot Discord Writen In Typescript with module [Discord-Akairo](https://github.com/discord-akairo/) And [Discord.JS](https://github.com/discordjs) Made With ♥ By tokisaki13
 
-![NeoAkairo](https://cdn.discordapp.com/attachments/713193780932771891/750784429701726268/enterprise-new.png)
+![NeoAkairo](https://cdn.discordapp.com/attachments/713193780932771891/762219735026499614/Enterprise-1080.png)
 
 ## Self Hosting Instruction
 
