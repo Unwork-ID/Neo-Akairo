@@ -41,6 +41,7 @@
 * [Discord.js v12 (stable)](https://github.com/discordjs)
 * [Erela.js](https://github.com/Solaris9/erela.js)
 * [tokisaki13](https://github.com/tokisaki13)
+* This Project Is Lisence Under [MIT](https://github.com/Enterprise-ID/Neo-Akairo/blob/master/LICENSE)
 * Don't forget to give stars on this project
 
 ![emoji](https://cdn.discordapp.com/emojis/738999436008489011.gif?v=1)
