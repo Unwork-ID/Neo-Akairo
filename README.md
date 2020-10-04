@@ -58,7 +58,6 @@
 * This music player have many supported format like as shown bellow
 * YouTube, Spotify, SoundCloud, Bandcamp, Vimeo, HTTP Urls, ACC, Opus or Vaorbis codecs
 
-
 ## Author
 
 * [Discord-Akairo](https://github.com/discord-akairo)
