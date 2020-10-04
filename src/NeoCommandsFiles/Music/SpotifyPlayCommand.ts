@@ -43,17 +43,20 @@ export default class SpotifyPlayCommand extends Command {
 
     public async exec(message: Message, { search }): Promise<Message> {
 
-        spotify.search({ type: 'track', query: `${search}` })
+    spotify.search({ type: 'track', query: `${search}` })
         .then(async (response) => {
-    const { channel } = message.member.voice;
-    if (!channel) return message.reply('you need to join a voice channel.');
-    const player = this.client.music.create({
-    guild: message.guild.id,
-    voiceChannel: channel.id,
-    textChannel: message.channel.id
-    });
 
-    player.connect();
+        const { channel } = message.member.voice;
+        if (!channel) return message.reply('you need to join a voice channel.');
+
+
+        const player = this.client.music.create({
+            guild: message.guild.id,
+            voiceChannel: channel.id,
+            textChannel: message.channel.id
+        });
+
+        player.connect();
 
         var track = response.tracks.items.slice(0, 5)
 
@@ -85,7 +88,7 @@ export default class SpotifyPlayCommand extends Command {
     } catch (err) {
         console.log(err)
         return message.reply(`there was an error while searching: ${err.message}`);
-    }
+}
     switch (res.loadType) {
         case 'NO_MATCHES':
         if(!player.queue.current) player.destroy();
@@ -94,7 +97,7 @@ export default class SpotifyPlayCommand extends Command {
             player.queue.add(res.tracks[0])
             if (!player.playing && !player.paused && !player.queue.length) player.play();
             return message.reply(`enqueuing \`${res.tracks[0].title}\`.`);
-    }
+        }
 
     });
 
