@@ -18,7 +18,7 @@ export default class VolumeCommand extends Command {
                     "volume 10"
                 ]
             },
-            ratelimit: 3e5,
+            ratelimit: 3,
             channel: "guild",
             args: [
                 {

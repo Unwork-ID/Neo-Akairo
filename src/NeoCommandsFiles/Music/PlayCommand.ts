@@ -18,7 +18,7 @@ export default class PlayCommand extends Command {
                     "play https://open.spotify.com/track/0bMbDctzMmTyK2j74j3nF3?si=AjF4w-D6RG-46n6uBhhEOA"
                 ]
             },
-            ratelimit: 3e5,
+            ratelimit: 3,
             args: [
                 {
                     id: "search",

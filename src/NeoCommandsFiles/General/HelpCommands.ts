@@ -15,7 +15,7 @@ export default class HelpCommand extends Command {
                     "h ping"
                 ]
             },
-            ratelimit: 3e5,
+            ratelimit: 3,
             args: [
                 {
                     id: "command",

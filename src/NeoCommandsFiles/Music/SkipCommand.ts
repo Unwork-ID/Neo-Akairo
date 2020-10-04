@@ -16,7 +16,7 @@ export default class SkipCommand extends Command {
                     "skip"
                 ]
             },
-            ratelimit: 3e5,
+            ratelimit: 3,
             channel: "guild"
         })
         this.client = client

@@ -16,7 +16,7 @@ export default class QueueCommand extends  Command {
                     "queue"
                 ]
             },
-            ratelimit: 3e5,
+            ratelimit: 3,
             channel: "guild"
         })
         this.client = client

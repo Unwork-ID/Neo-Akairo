@@ -18,7 +18,7 @@ export default class NowPlayCommand extends Command {
                     "nowplay"
                 ]
             },
-            ratelimit: 3e5,
+            ratelimit: 3,
             channel: "guild"
         })
         this.client = client

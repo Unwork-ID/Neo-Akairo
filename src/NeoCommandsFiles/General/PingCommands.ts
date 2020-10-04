@@ -13,7 +13,7 @@ export default class Ping extends Command {
                     "ping"
                 ]
             },
-            ratelimit: 3e5,
+            ratelimit: 3,
             channel: 'guild'
         });
     }
