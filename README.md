@@ -9,8 +9,11 @@
 * First You need `Lavalink Server` [here](https://github.com/Frederikam/Lavalink) for reference of Lavalink Server
 * Make sure you have TypeScript installed on your PC/Laptop
 * To install TypeScript run `npm install -g typescript`
+* Configure your the `config.ts` on `src/config.ts`
+* Configure LavaServer on `src/EreleConnector/nodes.ts`
 * Then install the dependencise with `npm install --save`
 * If all done you can run `npm run dev`
+* Then your bot ready to go
 
 ## Modules
 
