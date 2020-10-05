@@ -42,7 +42,8 @@ export default class PlayCommand extends Command {
             var player = this.client.music.create({
                 guild: message.guild.id,
                 voiceChannel: channel.id,
-                textChannel: message.channel.id
+                textChannel: message.channel.id,
+                selfDeafen: true
             });
 
             player.connect();
