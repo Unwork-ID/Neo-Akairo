@@ -57,8 +57,7 @@
 ![Erela](https://cdn.discordapp.com/attachments/713193780932771891/762348311679074304/68747470733a2f2f70726f6a656374732e736f6c617269732e636f6465732f6572656c616a732f696d616765732f7472616e.png)
 
 * This Bot using erela.js for music player.
-* This music player have many supported format like as shown bellow
-* YouTube, Spotify, SoundCloud, Bandcamp, Vimeo, HTTP Urls, ACC, Opus or Vaorbis codecs
+* With Powerfull and High Quality music.
 
 ## Author
 
