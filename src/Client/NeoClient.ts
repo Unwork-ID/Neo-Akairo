@@ -5,7 +5,7 @@ import { Manager } from 'erela.js'
 
 
 import { prefix, owners, token } from '../config';
-import Erela from '../Server/Erela';
+import Erela from '../Server/ErelaServer';
 
 
 declare module 'discord-akairo' {

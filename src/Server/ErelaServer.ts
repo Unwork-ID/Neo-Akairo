@@ -2,7 +2,7 @@ import  Client  from '../Client/NeoClient'
 import { node } from '../ErelaConnector/nodes'
 import { SpotifyClientID, SpotifyClientSecret} from '../config';
 
-import { Manager } from 'erela.js';
+import { Manager } from 'erela.js'
 import { TextChannel } from 'discord.js';
 import ErelaSpotify from 'erela.js-spotify';
 
