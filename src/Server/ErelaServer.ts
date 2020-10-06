@@ -1,5 +1,5 @@
 import  Client  from '../Client/NeoClient'
-import { node } from '../ErelaConnector/nodes'
+import { HOST, PORT, PASSWORD } from '../ErelaConnector/nodes'
 import { SpotifyClientID, SpotifyClientSecret} from '../config';
 
 import { Manager } from 'erela.js'
@@ -18,7 +18,12 @@ export default class Erela {
 
     async ErelaConnect(): Promise<void> {
             this.client.music = new Manager({
-            nodes: node,
+            nodes: [{
+                host: HOST,
+                port: PORT,
+                password: PASSWORD
+
+            }],
             autoPlay: true,
             plugins: [
                 new ErelaSpotify({ 

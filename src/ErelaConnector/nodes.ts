@@ -1,9 +1,5 @@
 const config = require('dotenv').config();
 
-export var node = [
-        {
-            host: `${process.env.LAVA_IP}`,
-            port: process.env.LAVA_PORT,
-            password: `${process.env.LAVA_PASS}`
-        }
-    ]
+export var HOST: string = process.env.LAVAIP
+export var PORT: any = process.env.LAVAPORT
+export var PASSWORD: string = process.env.LAVAPASS
