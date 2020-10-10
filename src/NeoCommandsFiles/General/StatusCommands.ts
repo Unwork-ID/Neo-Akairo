@@ -57,6 +57,8 @@ export default class StatsCommand extends Command {
             `\u3000 Total: ${ut.formatBytes(process.memoryUsage().heapTotal)}`,
             `\u3000 Used: ${ut.formatBytes(process.memoryUsage().heapUsed)}`,
         ])
+        // Don't delete this embed
+        .addField("\u200B", `**[\`Website\`](https://tokisaki.xyz) | [\`GitHub\`](https://github.com/Enterprise-ID/Neo-Akairo) | [\`Discord\`](https://tokisaki.xyz/discord) |**`)
         .setTimestamp());
     }
 }
