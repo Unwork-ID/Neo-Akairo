@@ -70,5 +70,6 @@
 * [tokisaki13](https://github.com/tokisaki13)
 * This Project Is Lisence Under [MIT Lisence](https://github.com/Enterprise-ID/Neo-Akairo/blob/master/LICENSE)
 * Don't forget to give stars on this project
+* [Invite The Protoype Bot For Review](https://discord.com/oauth2/authorize?client_id=472061789325230110&scope=bot&permissions=8)
 
 ![emoji](https://cdn.discordapp.com/emojis/738999436008489011.gif?v=1)
