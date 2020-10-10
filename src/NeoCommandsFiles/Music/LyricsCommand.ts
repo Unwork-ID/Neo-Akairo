@@ -17,7 +17,8 @@ export default class LyricsCommand extends Command {
                     "lyrics"
                 ]
             },
-            ratelimit: 3
+            ratelimit: 3,
+            channel: "guild"
         })
         this.client = client
     }

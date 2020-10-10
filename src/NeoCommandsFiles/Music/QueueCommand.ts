@@ -38,7 +38,8 @@ export default class QueueCommand extends  Command {
     
         var queue = player.queue;
         var e = new MessageEmbed()
-        .setAuthor(`Queue for ${message.guild.name}`);
+        .setAuthor(`Queue for ${message.guild.name}`)
+        .setImage(`https://img.youtube.com/vi/${queue.current.identifier}/maxresdefault.jpg`);
     
         var x = 5;
         var page = player.queue.length && Number(pagenum) ? Number(pagenum) : 1;
