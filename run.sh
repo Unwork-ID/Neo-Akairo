@@ -1,1 +1,1 @@
-npm run vps
+npm run dev
