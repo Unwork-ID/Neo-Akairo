@@ -2,6 +2,7 @@ import Client from '../../Client/NeoClient';
 
 import { Command } from 'discord-akairo';
 import { Message, MessageEmbed } from 'discord.js';
+import { Utils } from '@anonymousg/lavajs';
 
 export default class PlayCommand extends Command {
     client: Client
@@ -71,9 +72,17 @@ export default class PlayCommand extends Command {
                     return message.reply(`enqueuing \`${res.tracks[0].title}\`.`);
                 case 'PLAYLIST_LOADED': {
                     player.queue.add(res.tracks);
-            
+                    var duration = Utils.formatTime(res.tracks.reduce((acc, cur) => ({duration: acc.duration + cur.duration})).duration)
                     if (!player.playing && !player.paused && player.queue.size === res.tracks.length) player.play();
-                    return message.reply(`enqueuing playlist \`${res.playlist.name}\` with ${res.tracks.length} tracks.`);
+                    var ttl = res.playlist.name;
+                    var e = new MessageEmbed()
+                    .setTitle(`🎶 Playlist Loaded 🎶`)
+                    .addField("Title", `${ttl.length > 10 ? ttl.substring(0, 10) + "..." : ttl}`, true)
+                    .addField("Total", `\`${res.tracks.length}\``, true)
+                    .addField("Duration", `${duration}`, true)
+                    .addField("Requester", `${res.tracks.requester}`, true)
+                    .setImage(`https://img.youtube.com/vi/${res.tracks[0].identifier}/maxresdefault.jpg`)
+                    return message.channel.send(e)
                 }
                 case 'SEARCH_RESULT':
                     var max = 5, collected, filter = (m) => m.author.id === message.author.id && /^(\d+|end)$/i.test(m.content);
@@ -88,7 +97,7 @@ export default class PlayCommand extends Command {
                         .setAuthor(`🎶 Result of ${search} 🎶`, "https://cdn.discordapp.com/attachments/713193780932771891/759022257669406800/yt.png")
                         .setDescription(results)
                         .setFooter(`Request By: ${message.author.tag}`, message.author.avatarURL())
-                    message.channel.send(e);
+                    message.channel.send(e)
                     try {
                         collected = await message.channel.awaitMessages(filter, { max: 1, time: 30e3, errors: ['time'] });
                         } catch (e) {
@@ -109,7 +118,14 @@ export default class PlayCommand extends Command {
                         player.queue.add(track);
                 
                         if (!player.playing && !player.paused && !player.queue.length) player.play();
-                        return message.reply(`enqueuing \`${track.title}\`.`);
+                        return message.util.send(
+                            new MessageEmbed()
+                            .setAuthor(`Added Music`, "https://cdn.discordapp.com/attachments/713193780932771891/759022257669406800/yt.png")
+                            .addField("Title", `[${track.title}](${track.uri})`, true)
+                            .addField("Duration", `${Utils.formatTime(track.duration)}`, true)
+                            .addField("Requester", `${track.requester}`, true)
+                            .setImage(`https://img.youtube.com/vi/${track.identifier}/maxresdefault.jpg`)
+                        )
             }
         return;
     }

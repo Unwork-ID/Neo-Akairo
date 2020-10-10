@@ -40,9 +40,12 @@ export default class Erela {
         this.client.music
         .on('nodeConnect', (node) => console.log('[ ERELA ]', `Erela Connected to ${node.options.host}`))
         .on('nodeError', (node, err) => console.log('[ ERELA ERROR ]', `An Error ${err.message}`))
+        .on('nodeDisconnect', (player) => {
+            player.destroy();
+        })
         .on('trackStart', (player, track) => {
             let channel = this.client.channels.cache.get(player.textChannel) as TextChannel
-            channel.send(`Playing **${track.title}**`)
+            channel.send(`Playing **${track.title}** requester: ${player.queue.current.requester}`)
         })
         .on('queueEnd', (player) => {
             let channel = this.client.channels.cache.get(player.textChannel) as TextChannel
