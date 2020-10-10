@@ -13,6 +13,7 @@
 * Configure LavaServer on `src/EreleConnector/nodes.ts`
 * Then install the dependencise with `npm install --save`
 * If all done you can run `npm run dev`
+* If you run on VPS with pm2, you can use `pm2 start run.sh --name AppName`
 * Then your bot ready to go
 
 ## Modules
