@@ -23,11 +23,12 @@ export default class PlayCommand extends Command {
                 {
                     id: "search",
                     type: "string",
-                    match: "rest",
+                    match: "separate",
                     prompt: {
                         start: (msg: Message) => `**${msg.author.tag}** Please provide < link | title | playlist >`,
                         retry: (msg: Message) => `**${msg.author.tag}** Please provide < link | title | playlist >`
-                    }
+                    },
+                    default: []
                 }
             ],
             channel: "guild"
@@ -35,7 +36,7 @@ export default class PlayCommand extends Command {
         this.client = client
     }
 
-    public async exec(message: Message, { search }): Promise<Message> {
+    public async exec(message: Message, { search }: { search: string[] }): Promise<Message> {
             var { channel } = message.member.voice
             if(!channel) return message.channel.send("You need to join VoiceChannel first to play music");
 
@@ -50,7 +51,7 @@ export default class PlayCommand extends Command {
 
             var res;
             try{
-                res = await player.search(search, message.author);
+                res = await player.search(search[0], message.author);
                 if(res.loadType === "LOAD_FAILED") {
                     if(!player.queue.current) player.destroy();
                     throw new Error(res.exeption.message);
@@ -68,11 +69,12 @@ export default class PlayCommand extends Command {
             
                     if (!player.playing && !player.paused && !player.queue.length) player.play();
                     return message.reply(`enqueuing \`${res.tracks[0].title}\`.`);
-                case 'PLAYLIST_LOADED':
+                case 'PLAYLIST_LOADED': {
                     player.queue.add(res.tracks);
             
                     if (!player.playing && !player.paused && player.queue.size === res.tracks.length) player.play();
                     return message.reply(`enqueuing playlist \`${res.playlist.name}\` with ${res.tracks.length} tracks.`);
+                }
                 case 'SEARCH_RESULT':
                     var max = 5, collected, filter = (m) => m.author.id === message.author.id && /^(\d+|end)$/i.test(m.content);
                     if (res.tracks.length < max) max = res.tracks.length;

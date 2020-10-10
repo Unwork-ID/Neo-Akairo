@@ -17,12 +17,20 @@ export default class QueueCommand extends  Command {
                 ]
             },
             ratelimit: 3,
-            channel: "guild"
+            channel: "guild",
+            args: [
+                {
+                    id: "args",
+                    type: "string",
+                    match: "rest",
+                    default: []
+                }
+            ]
         })
         this.client = client
     }
 
-    public exec(message: Message): Promise<Message> {
+    public exec(message: Message, { args }: { args: number}): Promise<Message> {
         var player = this.client.music.players.get(message.guild.id);
         if(!player) return message.channel.send(`Oi!! Baka!! No Music On Queue!`);
     
@@ -30,8 +38,8 @@ export default class QueueCommand extends  Command {
         var e = new MessageEmbed()
         .setAuthor(`Queue for ${message.guild.name}`);
     
-        var x = 10;
-        var page = player.queue.length && Number(player.queue[0]) ? Number(player.queue[0]) : 1;
+        var x = 5;
+        var page = player.queue.length && Number(args[0]) ? Number(args[0]) : 1;
     
         var end = page * x;
         var start = end - x;
