@@ -20,17 +20,19 @@ export default class QueueCommand extends  Command {
             channel: "guild",
             args: [
                 {
-                    id: "args",
-                    type: "string",
-                    match: "rest",
-                    default: []
+                    id: "pagenum",
+                    type: (_: Message, str: string): null | Number => {
+                        if(str && !isNaN(Number(str))) return Number(str);
+                        return null
+                    },
+                    match: "rest"
                 }
             ]
         })
         this.client = client
     }
 
-    public exec(message: Message, { args }: { args: number}): Promise<Message> {
+    public exec(message: Message, { pagenum }: { pagenum: number}): Promise<Message> {
         var player = this.client.music.players.get(message.guild.id);
         if(!player) return message.channel.send(`Oi!! Baka!! No Music On Queue!`);
     
@@ -39,7 +41,7 @@ export default class QueueCommand extends  Command {
         .setAuthor(`Queue for ${message.guild.name}`);
     
         var x = 5;
-        var page = player.queue.length && Number(args[0]) ? Number(args[0]) : 1;
+        var page = player.queue.length && Number(pagenum) ? Number(pagenum) : 1;
     
         var end = page * x;
         var start = end - x;
