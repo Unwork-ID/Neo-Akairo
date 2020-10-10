@@ -7,7 +7,7 @@ export default class QueueCommand extends  Command {
     client: Client
     public constructor(client: Client) {
         super("queue", {
-            aliases: ["queue"],
+            aliases: ["queue", "q"],
             category: "Music",
             description: {
                 content: "To see list all music in current queue",

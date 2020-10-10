@@ -8,7 +8,7 @@ export default class LyricsCommand extends Command {
     client: Client
     public constructor(client: Client) {
         super("lyrics", {
-            aliases: ["lyrics"],
+            aliases: ["lyrics", "lc"],
             category: "Music",
             description: {
                 content: "Display lyrics in current queue",

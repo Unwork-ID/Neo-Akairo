@@ -72,4 +72,9 @@
 * Don't forget to give stars on this project
 * [Invite The Protoype Bot For Review](https://discord.com/oauth2/authorize?client_id=472061789325230110&scope=bot&permissions=8)
 
+## Become A Donator
+
+* Donate us to keep this project update and have more features
+* [Donate](https://arxist.com/tip/enterpriseid)
+
 ![emoji](https://cdn.discordapp.com/emojis/738999436008489011.gif?v=1)
