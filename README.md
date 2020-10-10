@@ -45,7 +45,7 @@
 | Play    | play, p | Search music on youtube | play  title/link | play Alan Walker |
 | Spotify | spotitfy, sp | Search music on Spotify | spotify title | spotify JoJo |
 | Queue   | queue, q | Show list all music currently play | queue | queue |
-| NowPlay | nowplay, np | Show progres music currently play | nowplay | now play |
+| NowPlay | nowplay, np | Show progres music currently play | nowplay | nowplay |
 | Skip    | skip | Skipping music currently play | skip | skip |
 | Stop    | stop | Stoping music currently play and leave | stop | stop |
 | Volume  | volume, volume | Turn up and down music volume | volume 0-100 | volume 50 |
