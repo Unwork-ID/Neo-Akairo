@@ -5,9 +5,11 @@ import ms from 'ms'
 import os from 'os'
 
 import { Util } from '../../NeoUtils/NeoUtils';
+import Client from '../../Client/NeoClient'
 
 export default class StatsCommand extends Command {
-    public constructor() {
+    client: Client
+    public constructor(client: Client) {
         super("stats", {
             aliases: ["stats", "st"],
             category: "Core",
@@ -21,6 +23,7 @@ export default class StatsCommand extends Command {
             ratelimit: 3,
             channel: "guild"
         })
+        this.client = client
     }
 
     public exec(message: Message): Promise<Message> {
@@ -32,6 +35,7 @@ export default class StatsCommand extends Command {
 
         return message.util.send(
             new MessageEmbed()
+        .setAuthor(this.client.user.tag, this.client.user.avatarURL())
         .setThumbnail(this.client.user.displayAvatarURL())
         .setColor(message.guild.me.displayHexColor || "RED")
         .addField("General", [
@@ -56,9 +60,22 @@ export default class StatsCommand extends Command {
             `**● Memory:**`,
             `\u3000 Total: ${ut.formatBytes(process.memoryUsage().heapTotal)}`,
             `\u3000 Used: ${ut.formatBytes(process.memoryUsage().heapUsed)}`,
+            '\u200b'
+        ])
+        .addField("Lavalink Status", [
+            `**● CPU**`,
+            `\u3000 Cores: ${this.client.music.nodes.first().stats.cpu.cores}`,
+            `\u3000 System Load: ${this.client.music.nodes.first().stats.cpu.systemLoad.toFixed(2)}%`,
+            `\u3000 Lavalink Load: ${this.client.music.nodes.first().stats.cpu.lavalinkLoad.toFixed(2)}%`,
+            `**● Memory**`,
+            `\u3000 Allocated: ${ut.formatBytes(this.client.music.nodes.first().stats.memory.allocated)}`,
+            `\u3000 Used: ${ut.formatBytes(this.client.music.nodes.first().stats.memory.used)}`,
+            `\u3000 Free: ${ut.formatBytes(this.client.music.nodes.first().stats.memory.free)}`,
+            `**● Uptime: ** ${ms(this.client.music.nodes.first().stats.uptime)}`,
         ])
         // Don't delete this embed
-        .addField("\u200B", `**[\`Website\`](https://tokisaki.xyz) | [\`GitHub\`](https://github.com/Enterprise-ID/Neo-Akairo) | [\`Discord\`](https://tokisaki.xyz/discord) |**`)
+        .addField("\u200B", `| **[\`Website\`](https://tokisaki.xyz) | [\`GitHub\`](https://github.com/Enterprise-ID/Neo-Akairo) | [\`Discord\`](https://tokisaki.xyz/discord) |**`)
+        .setFooter(`Request for ${message.author.tag}`, message.author.avatarURL())
         .setTimestamp());
     }
 }
