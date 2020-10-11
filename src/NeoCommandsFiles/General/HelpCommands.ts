@@ -34,7 +34,6 @@ export default class HelpCommand extends Command {
             .setColor("RANDOM")
             .setThumbnail(this.client.user.displayAvatarURL({size: 2048, format: "png"}))
             .setDescription(stripIndents`
-
             **Aliases**
             ${command.aliases.map(x => `\`${x}\``).join(" | ")}
 
@@ -45,7 +44,10 @@ export default class HelpCommand extends Command {
             ${command.description.usage || "No Usage Provided"}
             
             **Example**
-            ${command.description.example ? command.description.example.map(e => `\`${e}\``).join("\n") : "No Example Provided"}`)
+            ${command.description.example ? command.description.example.map(e => `\`${e}\``).join("\n") : "No Example Provided"}
+            
+            **Permission Request**
+            ${command.clientPermissions || "No need permissions"}`)
             );
         }
 

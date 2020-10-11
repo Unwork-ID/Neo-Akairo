@@ -1,7 +1,6 @@
 import { Command } from 'discord-akairo';
 import { Message, MessageEmbed, GuildMember } from 'discord.js';
 import { utc } from 'moment';
-import { resolve } from 'path';
 
 export default class BanCommand extends Command {
     public constructor(){
