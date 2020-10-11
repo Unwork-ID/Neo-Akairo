@@ -29,7 +29,6 @@ export default class PlayCommand extends Command {
                         start: (msg: Message) => `**${msg.author.tag}** Please provide < link | title | playlist >`,
                         retry: (msg: Message) => `**${msg.author.tag}** Please provide < link | title | playlist >`
                     },
-                    default: []
                 }
             ],
             channel: "guild"
@@ -37,7 +36,7 @@ export default class PlayCommand extends Command {
         this.client = client
     }
 
-    public async exec(message: Message, { search }: { search: string[] }): Promise<Message> {
+    public async exec(message: Message, { search }): Promise<Message> {
             var { channel } = message.member.voice
             if(!channel) return message.channel.send("You need to join VoiceChannel first to play music");
 
@@ -52,7 +51,7 @@ export default class PlayCommand extends Command {
 
             var res;
             try{
-                res = await player.search(search[0], message.author);
+                res = await player.search(search, message.author);
                 if(res.loadType === "LOAD_FAILED") {
                     if(!player.queue.current) player.destroy();
                     throw new Error(res.exeption.message);
