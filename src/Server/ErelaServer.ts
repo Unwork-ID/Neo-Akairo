@@ -45,7 +45,7 @@ export default class Erela {
         })
         .on('trackStart', (player, track) => {
             let channel = this.client.channels.cache.get(player.textChannel) as TextChannel
-            channel.send(`Playing **${track.title}** requester: ${player.queue.current.requester}`)
+            channel.send(`Playing **${track.title}**`)
         })
         .on('queueEnd', (player) => {
             let channel = this.client.channels.cache.get(player.textChannel) as TextChannel
