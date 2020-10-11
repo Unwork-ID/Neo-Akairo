@@ -20,6 +20,7 @@ export default class UnbanCommand extends Command {
                 {
                     id: "user",
                     type: "number",
+                    match: "rest",
                     prompt: {
                         start: (msg: Message) => `**${msg.author.tag}** Please provide the user id!`,
                         retry: (msg: Message) => `**${msg.author.tag}** Please provide the user id!`

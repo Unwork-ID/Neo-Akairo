@@ -22,6 +22,7 @@ export default class BanCommand extends Command {
                 {
                     id: "user",
                     type: "member",
+                    match: "rest",
                     prompt: {
                         start: (msg: Message) => `**${msg.author.tag}** Please mention member who want to ban`,
                         retry: (msg: Message) => `**${msg.author.tag}** Please mention member who want to ban`
