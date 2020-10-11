@@ -24,6 +24,7 @@ export default class PlayCommand extends Command {
                 {
                     id: "search",
                     type: "string",
+                    match: "rest",
                     prompt: {
                         start: (msg: Message) => `**${msg.author.tag}** Please provide < link | title | playlist >`,
                         retry: (msg: Message) => `**${msg.author.tag}** Please provide < link | title | playlist >`
