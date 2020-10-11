@@ -1,6 +1,7 @@
 import { Listener } from 'discord-akairo';
 import Client from '../../Client/NeoClient'
 
+
 export default class NeoReady extends Listener {
     client: Client
     public constructor(client: Client) {

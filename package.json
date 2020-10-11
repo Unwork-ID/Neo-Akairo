@@ -46,6 +46,8 @@
     "ms": "^2.1.2",
     "node-spotify-api": "^1.1.1",
     "node-superfetch": "^0.1.10",
-    "snekfetch": "^4.0.4"
+    "snekfetch": "^4.0.4",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.0"
   }
 }

@@ -77,4 +77,12 @@
 * Donate us to keep this project update and have more features
 * [Donate](https://arxist.com/tip/enterpriseid)
 
+## Cotributing
+
+* Fork it!!!
+* Create your feature branch: `git checkout -b my-new-feature`
+* Commit your changes: `git commit -am "Add some feature`
+* Push to the branch: `git push origin my-new-feature`
+* Sumbit a pull request :)
+
 ![emoji](https://cdn.discordapp.com/emojis/738999436008489011.gif?v=1)

@@ -2,10 +2,11 @@ import { AkairoClient, CommandHandler, ListenerHandler } from 'discord-akairo';
 import { Message, Constants } from 'discord.js';
 import { join } from 'path';
 import { Manager } from 'erela.js'
-
+import { Logger } from 'winston'
 
 import { prefix, owners, token } from '../config';
 import Erela from '../Server/ErelaServer';
+import { logger } from '../NeoUtils/NeoUtils'
 
 
 declare module 'discord-akairo' {
@@ -23,13 +24,17 @@ export default class Neo extends AkairoClient {
     music: Manager;
     erela: Erela;
     config: BotOption;
+    logger: Logger;
     constructor() {
         super({
+            fetchAllMembers: true,
+            messageCacheMaxSize: 0,
             disableMentions: 'everyone',
             partials: Object.values(Constants.PartialTypes)
         })
         this.ownerID = owners
         this.erela = new Erela(this)
+        this.logger = logger
     }
 
     public listenerHandler: ListenerHandler = new ListenerHandler(this, {
