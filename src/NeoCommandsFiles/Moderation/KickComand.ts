@@ -32,17 +32,17 @@ export default class KickCommand extends Command {
                     default: "No reason provided...."
                 }
             ],
-            userPermissions: ["KICK_MEMBERS", "ADMINISTRATOR"],
-            clientPermissions: ["KICK_MEMBERS", "ADMINISTRATOR"]
+            userPermissions: ["KICK_MEMBERS"],
+            clientPermissions: ["KICK_MEMBERS"]
         })
     }
 
     public async exec(message: Message, { user, reason}: {user: GuildMember, reason: string}): Promise<Message> {
-        if(!message.member.hasPermission(["KICK_MEMBERS", "ADMINISTRATOR"])) return message.channel.send(`Sorry, you don't have permission to run this command.`);
+        if(!message.member.hasPermission(["KICK_MEMBERS"])) return message.channel.send(`Sorry, you don't have permission to run this command.`);
 
         if(!user.kickable) return message.channel.send(`Sorry, i can't kick this user`);
 
-        if(!message.member.guild.me.hasPermission(["KICK_MEMBERS", "ADMINISTRATOR"])) return message.channel.send(`Sorry, i don't have permission to kick members, make sure you give me \`KICK_MEMBERS\` permission`);
+        if(!message.member.guild.me.hasPermission(["KICK_MEMBERS"])) return message.channel.send(`Sorry, i don't have permission to kick members, make sure you give me \`KICK_MEMBERS\` permission`);
 
         user.kick().then(x => {
             x.send(`You has been kicked from **${message.guild.name}** for reason \`${reason}\``)

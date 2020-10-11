@@ -26,14 +26,14 @@ export default class UnbanCommand extends Command {
                     }
                 }
             ],
-            userPermissions: ["ADMINISTRATOR", "BAN_MEMBERS"],
-            clientPermissions: ["BAN_MEMBERS", "ADMINISTRATOR"]
+            userPermissions: ["MANAGE_GUILD"],
+            clientPermissions: ["MANAGE_GUILD"]
         })
     }
     public async exec(message: Message, { user }: { user: GuildMember }): Promise<Message> {
-        if(!message.member.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return message.channel.send(`Sorry, you don't have permission to run this command.`);
+        if(!message.member.hasPermission(["MANAGE_GUILD"])) return message.channel.send(`Sorry, you don't have permission to run this command.`);
 
-        if(!message.member.guild.me.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return message.channel.send(`Sorry, i don't have permission to unban this user, make sure i have \`BAN_MEMBERS\` permission`);
+        if(!message.member.guild.me.hasPermission(["MANAGE_GUILD"])) return message.channel.send(`Sorry, i don't have permission to unban this user, make sure i have \`MANAGE_GUILD\` permission`);
 
         await message.guild.members.unban(user).then(x => {
             x.send(`You has been unbanned from **${message.guild.name}**`)

@@ -41,17 +41,17 @@ export default class BanCommand extends Command {
                     default: "No reason provided..."
                 }
             ],
-            userPermissions: ["BAN_MEMBERS", "ADMINISTRATOR"],
-            clientPermissions: ["BAN_MEMBERS", "ADMINISTRATOR"]
+            userPermissions: ["BAN_MEMBERS"],
+            clientPermissions: ["BAN_MEMBERS"]
         })
     }
 
     public async exec(message: Message, {user, day, reason}: {user: GuildMember, day: number, reason: string}): Promise<Message> {
-            if(!message.member.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return message.channel.send(`Sorry, you don't have permission to run this command.`)
+            if(!message.member.hasPermission(["BAN_MEMBERS"])) return message.channel.send(`Sorry, you don't have permission to run this command.`)
 
             if(!user.bannable) return message.channel.send(`Sorry, i can't ban this user`);
 
-            if(!message.member.guild.me.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return message.channel.send(`Sorry, i don't have permission to ban user, make sure you give me \`BAN_MEMBERS\` permission`);
+            if(!message.member.guild.me.hasPermission(["BAN_MEMBERS"])) return message.channel.send(`Sorry, i don't have permission to ban user, make sure you give me \`BAN_MEMBERS\` permission`);
 
             await user.send(`You has been banned from **${message.guild.name} for reason: \`${reason}\``);
             await message.guild.members.ban(user, { days: day, reason: reason})
