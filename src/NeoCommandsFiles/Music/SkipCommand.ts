@@ -25,12 +25,16 @@ export default class SkipCommand extends Command {
     public exec(message: Message): Promise<Message> {
         var player = this.client.music.players.get(message.guild.id);
 
-        if (!player) return message.reply(`This guild currently not playing anything`);
+        if (!player) return message.reply("This guild currently not playing anything");
 
-        const is = player.queue.current.requester === message.author.id || message.member.hasPermission(['MANAGE_MESSAGES']);
-        if (!is) return message.reply(`Only requester and admin can skip the music`);
+        var { channel } = message.member.voice
+
+        if(!channel) return message.channel.send("You're not in voice channel");
+
+        if(channel.id !== player.voiceChannel) return message.channel.send("You're not in the same voice channel!")
 
         player.stop();
+        
         return message.channel.send(`Muisc Skip by: <@${message.author.id}>`);
     }
 }
