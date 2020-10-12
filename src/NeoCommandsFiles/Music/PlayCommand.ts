@@ -1,8 +1,8 @@
 import Client from '../../Client/NeoClient';
+import { Util } from  '../../NeoUtils/NeoUtils'
 
 import { Command } from 'discord-akairo';
 import { Message, MessageEmbed } from 'discord.js';
-import { Utils } from '@anonymousg/lavajs';
 
 export default class PlayCommand extends Command {
     client: Client
@@ -47,6 +47,8 @@ export default class PlayCommand extends Command {
                 selfDeafen: true
             });
 
+            var util = new Util()
+
             player.connect();
 
             var res;
@@ -71,7 +73,7 @@ export default class PlayCommand extends Command {
                     return message.reply(`enqueuing \`${res.tracks[0].title}\`.`);
                 case 'PLAYLIST_LOADED': {
                     player.queue.add(res.tracks);
-                    var duration = Utils.formatTime(res.tracks.reduce((acc, cur) => ({duration: acc.duration + cur.duration})).duration)
+                    var duration = util.formatTime(res.tracks.reduce((acc, cur) => ({duration: acc.duration + cur.duration})).duration)
                     if (!player.playing && !player.paused && player.queue.size === res.tracks.length) player.play();
                     var ttl = res.playlist.name;
                     var e = new MessageEmbed()
@@ -121,7 +123,7 @@ export default class PlayCommand extends Command {
                             new MessageEmbed()
                             .setAuthor(`Added Music`, "https://cdn.discordapp.com/attachments/713193780932771891/759022257669406800/yt.png")
                             .addField("Title", `[${track.title}](${track.uri})`, true)
-                            .addField("Duration", `${Utils.formatTime(track.duration)}`, true)
+                            .addField("Duration", `${util.formatTime(track.duration)}`, true)
                             .addField("Requester", `${track.requester}`, true)
                             .setImage(`https://img.youtube.com/vi/${track.identifier}/maxresdefault.jpg`)
                         )
