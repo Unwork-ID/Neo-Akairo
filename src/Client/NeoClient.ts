@@ -9,7 +9,6 @@ import { logger } from '../NeoUtils/NeoUtils';
 import ListenHandler from '../NeoUtils/Main/Utils/ListenHandle';
 
 import ErelaServer from '../Server/Erela/ErelaServer';
-import ListenMoeServer from '../Server/ListenMoe/ListenMoe';
 
 
 declare module 'discord-akairo' {
@@ -18,37 +17,6 @@ declare module 'discord-akairo' {
         listenerHandler: ListenerHandler;
     }
 }
-
-interface RadioInfo {
-	songName: string;
-	artistName?: string;
-	artistList?: string;
-	artistCount: number;
-	sourceName: string;
-	albumName: string;
-	albumCover: string;
-	listeners: number;
-	requestedBy: string;
-	event: boolean;
-	eventName?: string;
-	eventCover?: string;
-}
-
-interface RadioInfoKpop {
-	songName: string;
-	artistName?: string;
-	artistList?: string;
-	artistCount: number;
-	sourceName: string;
-	albumName: string;
-	albumCover: string;
-	listeners: number;
-	requestedBy: string;
-	event: boolean;
-	eventName?: string;
-	eventCover?: string;
-}
-
 
 interface BotOption {
     owners?: string | string[]
@@ -59,11 +27,6 @@ export default class Neo extends AkairoClient {
     erela: ErelaServer;
     config: BotOption;
     logger: Logger;
-    radioInfo!: RadioInfo;
-    radioInfoKpop!: RadioInfoKpop;
-    ListenMoeJp: ListenMoeServer;
-    ListenMoeKr: ListenMoeServer;
-    ListenMoe: Collection<string, ListenHandler>
     constructor() {
         super({
             fetchAllMembers: true,
@@ -75,9 +38,6 @@ export default class Neo extends AkairoClient {
         this.ownerID = owners;
         this.erela = new ErelaServer(this);
         this.logger = logger;
-        this.ListenMoeJp = new ListenMoeServer(this, WebSocketJpop, 'jpop');
-        this.ListenMoeKr = new ListenMoeServer(this, WebSocketKpop, 'kpop');
-        this.ListenMoe = new Collection();
     }
 
     public listenerHandler: ListenerHandler = new ListenerHandler(this, {
