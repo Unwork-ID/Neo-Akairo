@@ -1,12 +1,15 @@
 import { AkairoClient, CommandHandler, ListenerHandler } from 'discord-akairo';
-import { Message, Constants } from 'discord.js';
+import { Message, Constants, Collection } from 'discord.js';
 import { join } from 'path';
 import { Manager } from 'erela.js'
 import { Logger } from 'winston'
 
-import { prefix, owners, token } from '../config';
-import Erela from '../Server/ErelaServer';
-import { logger } from '../NeoUtils/NeoUtils'
+import { prefix, owners, token, WebSocketJpop, WebSocketKpop } from '../config';
+import { logger } from '../NeoUtils/NeoUtils';
+import ListenHandler from '../NeoUtils/Main/Utils/ListenHandle';
+
+import ErelaServer from '../Server/Erela/ErelaServer';
+import ListenMoeServer from '../Server/ListenMoe/ListenMoe';
 
 
 declare module 'discord-akairo' {
@@ -16,15 +19,51 @@ declare module 'discord-akairo' {
     }
 }
 
+interface RadioInfo {
+	songName: string;
+	artistName?: string;
+	artistList?: string;
+	artistCount: number;
+	sourceName: string;
+	albumName: string;
+	albumCover: string;
+	listeners: number;
+	requestedBy: string;
+	event: boolean;
+	eventName?: string;
+	eventCover?: string;
+}
+
+interface RadioInfoKpop {
+	songName: string;
+	artistName?: string;
+	artistList?: string;
+	artistCount: number;
+	sourceName: string;
+	albumName: string;
+	albumCover: string;
+	listeners: number;
+	requestedBy: string;
+	event: boolean;
+	eventName?: string;
+	eventCover?: string;
+}
+
+
 interface BotOption {
     owners?: string | string[]
 }
 
 export default class Neo extends AkairoClient {
     music: Manager;
-    erela: Erela;
+    erela: ErelaServer;
     config: BotOption;
     logger: Logger;
+    radioInfo!: RadioInfo;
+    radioInfoKpop!: RadioInfoKpop;
+    ListenMoeJp: ListenMoeServer;
+    ListenMoeKr: ListenMoeServer;
+    ListenMoe: Collection<string, ListenHandler>
     constructor() {
         super({
             fetchAllMembers: true,
@@ -32,9 +71,13 @@ export default class Neo extends AkairoClient {
             disableMentions: 'everyone',
             partials: Object.values(Constants.PartialTypes)
         })
-        this.ownerID = owners
-        this.erela = new Erela(this)
-        this.logger = logger
+        this.config = this.config
+        this.ownerID = owners;
+        this.erela = new ErelaServer(this);
+        this.logger = logger;
+        this.ListenMoeJp = new ListenMoeServer(this, WebSocketJpop, 'jpop');
+        this.ListenMoeKr = new ListenMoeServer(this, WebSocketKpop, 'kpop');
+        this.ListenMoe = new Collection();
     }
 
     public listenerHandler: ListenerHandler = new ListenerHandler(this, {
@@ -49,7 +92,7 @@ export default class Neo extends AkairoClient {
         handleEdits: true,
         commandUtil: true,
         commandUtilLifetime: 3e5,
-        defaultCooldown: 6e4,
+        defaultCooldown: 5000,
         argumentDefaults: {
             prompt: {
                 modifyStart: (_: Message, str: string): string => `${str}\n\nType \`cancel\` to cancel the command.`,
@@ -79,7 +122,7 @@ export default class Neo extends AkairoClient {
 
     public async gas(): Promise<string> {
         await this._init();
-        await this.erela.ErelaConnect()
+        await this.erela.ErelaConnect();
         return this.login(token)
     }
 }

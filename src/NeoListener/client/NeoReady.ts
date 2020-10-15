@@ -16,8 +16,8 @@ export default class NeoReady extends Listener {
     public async exec(): Promise<void> {
         console.log('[ INFO ]', `${this.client.user.tag} Ready to go...`)
         this.client.user.setActivity("My Masta Developing Me!", { type: "WATCHING" });
-
-        this.client.on('raw', d => this.client.music.updateVoiceState(d));
         this.client.music.init(this.client.user.id);
+        this.client.ListenMoeJp.ListenConnnect()
+        this.client.ListenMoeKr.ListenConnnect();
     }
 }

@@ -1,6 +1,6 @@
-import  Client  from '../Client/NeoClient'
-import { HOST, PORT, PASSWORD } from '../ErelaConnector/nodes'
-import { SpotifyClientID, SpotifyClientSecret} from '../config';
+import  Client  from '../../Client/NeoClient'
+import { HOST, PORT, PASSWORD } from '../../ErelaConnector/nodes'
+import { SpotifyClientID, SpotifyClientSecret} from '../../config';
 
 import { Manager } from 'erela.js'
 import { TextChannel } from 'discord.js';

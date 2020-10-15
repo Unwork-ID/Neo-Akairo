@@ -6,3 +6,9 @@ node_modules
 
 #FINISH FILE
 finish
+
+#Maintenance Listen.moe radio
+
+src/NeoUtils/Main/Utils/ListenHandle.ts
+src/Server/ListenMoe
+src/NeoCommandsFiles/ListenRadio
