@@ -20,7 +20,6 @@ export default class AstolfoWallpaper extends Command {
         })
     }
 
-
     public async exec(message: Message): Promise<Message> {
 
         request.get({
