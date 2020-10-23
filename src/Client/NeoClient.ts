@@ -9,6 +9,7 @@ import { logger } from '../NeoUtils/NeoUtils';
 import ListenHandler from '../NeoUtils/Main/Utils/ListenHandle';
 
 import ErelaServer from '../Server/Erela/ErelaServer';
+import MongoServer from '../Server/Mongo/MongoConnect';
 
 
 declare module 'discord-akairo' {
@@ -27,6 +28,7 @@ export default class Neo extends AkairoClient {
     erela: ErelaServer;
     config: BotOption;
     logger: Logger;
+    mongo: MongoServer;
     constructor() {
         super({
             fetchAllMembers: true,
@@ -37,6 +39,7 @@ export default class Neo extends AkairoClient {
         this.config = this.config
         this.ownerID = owners;
         this.erela = new ErelaServer(this);
+        this.mongo = new MongoServer();
         this.logger = logger;
     }
 
@@ -83,6 +86,7 @@ export default class Neo extends AkairoClient {
     public async gas(): Promise<string> {
         await this._init();
         await this.erela.ErelaConnect();
+        await this.mongo.Connect();
         return this.login(token)
     }
 }
