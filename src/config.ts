@@ -7,3 +7,4 @@ export let WebSocketJpop: string = 'wss://listen.moe/gateway_v2';
 export let WebSocketKpop: string = 'wss://listen.moe/kpop/gateway_v2';
 export let SpotifyClientID: string = `${process.env.SpotifyClientID}`;
 export let SpotifyClientSecret: string = `${process.env.SpotifyClientSecret}`;
+export let MongoUrl: string = `${process.env.MONGO_URI}`
