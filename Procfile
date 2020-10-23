@@ -1,1 +1,1 @@
-worker: tsc && node ./finish/index.js
+worker: tsc && npm run vps
