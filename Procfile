@@ -1,0 +1,1 @@
+worker: tsc && node ./finish/index.js
