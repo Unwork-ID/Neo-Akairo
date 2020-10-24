@@ -20,10 +20,11 @@ export default class AstolfoWallpaper extends Command {
         })
     }
 
+
     public async exec(message: Message): Promise<Message> {
 
         request.get({
-            url: "https://tokisaki.xyz/api/astolfo",
+            url: "https://tokisaki.xyz/api/v1/astolfo",
             json: true
         }, function(error, response, body) {
             let img = Math.floor(Math.random() * body.length)
