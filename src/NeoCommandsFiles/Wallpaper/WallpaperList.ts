@@ -1,42 +1,37 @@
 import { Command } from 'discord-akairo';
 import { Message, MessageEmbed } from 'discord.js';
-import { utc } from 'moment';
-
 
 import { Wallpaper } from '../../NeoUtils/Main/Utils/Wallpaper'
 
-export default class AstolfoWallpaper extends Command {
+export default class WallpaperList extends Command {
     public constructor() {
-        super("astolfo", {
-            aliases: ["astolfo"],
+        super("wallpaperlist", {
+            aliases: ["wallpaperlis", "wplist"],
             category: "Wallpaper",
             description: {
-                content: "Give you random astolfo wallpaper from < tokisaki.xyz/api/astolfo >",
-                usage: "astolfo",
+                content: "To show all wallpaper list detail and total of wallpaper",
+                usage: "wallpaperlist",
                 example: [
-                    "astolfo"
+                    "wallpaperlist",
+                    "wplist"
                 ]
             },
-            ratelimit: 3,
-            channel: "guild"
+            ratelimit: 3
         })
     }
 
-
     public async exec(message: Message): Promise<Message> {
 
-            let api = new Wallpaper()
+        let astolfoapi = new Wallpaper()
+        let astolfo = await astolfoapi.Astolfo()
 
-            let res = await api.AstolfoRandom()
-            let e = new MessageEmbed()
-            .addField("Uploader", `**${res.uploader}**`, true)
-            .addField("Uploader ID", `\`${res.uploaderid}\``, true)
-            .addField("Date Upload", utc(res.time).format('Do MMMM YYYY'), true)
-            .addField("Upload Time", utc(res.time).format("HH:mm:ss"), true)
-            .setFooter("Power by: Enterprise ID API's", "https://cdn.discordapp.com/icons/738991925721432165/ec631b615dac6142a4644ab9d30602c9.png")
-            .setImage(res.data)
-            message.channel.send(e)
-
-        return 
+        let embed = new MessageEmbed()
+        .setAuthor(`All Wallpaper List Power by Enterprise ID`)
+        .setDescription([
+            `1. **Astolfo** Total Image \`${astolfo.data.length}\``
+        ])
+        .setTimestamp()
+        .setFooter(`Power By Enterprise ID`, "https://cdn.discordapp.com/icons/738991925721432165/ec631b615dac6142a4644ab9d30602c9.png")
+        return message.util.send(embed)
     }
 }
