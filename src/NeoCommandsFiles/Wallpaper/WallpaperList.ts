@@ -22,13 +22,18 @@ export default class WallpaperList extends Command {
 
     public async exec(message: Message): Promise<Message> {
 
-        let astolfoapi = new Wallpaper()
-        let astolfo = await astolfoapi.Astolfo()
+        let wallpaper = new Wallpaper();
+
+        let astolfo = await wallpaper.Astolfo();
+        let kurumi = await wallpaper.Kurumi();
+        let yuno = await wallpaper.YunoGasai();
 
         let embed = new MessageEmbed()
         .setAuthor(`All Wallpaper List Power by Enterprise ID`)
         .setDescription([
-            `1. **Astolfo** Total Image \`${astolfo.data.length}\``
+            `1. **Astolfo** Total Image \`${astolfo.data.length}\``,
+            `2. **Kurumi** Total Image \`${kurumi.data.length}\``,
+            `3. **Yuno Gasai** Total Iamge \`${yuno.data.length}\``
         ])
         .setTimestamp()
         .setFooter(`Power By Enterprise ID`, "https://cdn.discordapp.com/icons/738991925721432165/ec631b615dac6142a4644ab9d30602c9.png")
