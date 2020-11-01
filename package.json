@@ -1,54 +1,59 @@
 {
-  "name": "neo-akairo",
+  "name": "neo-production",
   "version": "1.0.0",
-  "description": "Neo Writhen In Typescript With Discord-Akairo, Discord.js Made With ♥",
-  "main": "./finish/index.js",
+  "description": "Production Of Neo-Akairo",
+  "main": "finish/index.js",
   "scripts": {
     "start": "node ./finish/index.js",
     "build": "tsc",
     "test": "jest",
     "dev": "nodemon -e ts --exec \"npm run build && npm start\"",
-    "vps": "npm run build && npm start"
+    "vps": "npm run build && npm start",
+    "lint": "eslint . --ext .ts",
+    "lintfix": "eslint . --ext .ts --fix"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Enterprise-ID/Neo-Aka.git"
+    "url": "git+https://github.com/Enterprise-ID/Neo-Akairo.git"
   },
   "keywords": [
-    "Discord",
-    "Bot",
-    "tokisaki13",
-    "EnterpriseID"
+    "neoakairo",
+    "discordbot",
+    "tokisaki13"
   ],
-  "author": "tokisaki <++ tokisaki.xyz ++>",
+  "author": "tokisaki13",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Enterprise-ID/Neo-Aka/issues"
+    "url": "https://github.com/Enterprise-ID/Neo-Akairo/issues"
   },
-  "homepage": "https://github.com/Enterprise-ID/Neo-Aka#readme",
+  "homepage": "https://github.com/Enterprise-ID/Neo-Akairo#readme",
   "devDependencies": {
-    "@types/node": "^14.14.0",
-    "dotenv": "^8.2.0",
-    "typescript": "^4.0.3"
+    "@hazmi35/eslint-config": "^2.1.0",
+    "@types/node": "^14.14.5",
+    "@typescript-eslint/eslint-plugin": "^4.6.0",
+    "@typescript-eslint/parser": "^4.6.0",
+    "eslint": "^7.12.1",
+    "typescript": "^4.0.5"
   },
   "dependencies": {
     "chalk": "^4.1.0",
     "common-tags": "^1.8.0",
-    "discord-akairo": "^8.1.0",
-    "discord.js": "^12.4.0",
+    "discord-akairo": "github:1Computer1/discord-akairo",
+    "discord.js": "^12.4.1",
+    "dotenv": "^8.2.0",
     "erela.js": "^2.0.1",
     "erela.js-spotify": "^1.0.2",
-    "humanize-duration": "^3.24.0",
     "moment": "^2.29.1",
-    "mongoose": "^5.10.9",
-    "ms": "^2.1.2",
+    "node-fetch": "^2.6.1",
     "node-spotify-api": "^1.1.1",
     "node-superfetch": "^0.1.10",
+    "pastebin-js": "^1.0.5",
     "request": "^2.88.2",
+    "request-promise": "^4.2.6",
     "snekfetch": "^4.0.4",
-    "socket.io-client": "^2.3.1",
+    "statcord.js": "^3.1.1",
+    "superagent": "^6.1.0",
     "winston": "^3.3.3",
-    "winston-daily-rotate-file": "^4.5.0",
-    "ws": "^7.3.1"
+    "winston-daily-rotate-file": "^4.5.0"
   }
 }

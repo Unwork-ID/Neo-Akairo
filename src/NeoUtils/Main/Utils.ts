@@ -1,3 +1,2 @@
-export * from './Utils/Functions';
+export * from "./Utils/Function";
 export * from './Utils/Logger';
-export * from './Utils/Errors';
