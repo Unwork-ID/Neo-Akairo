@@ -28,7 +28,7 @@ export default class NeoClient extends AkairoClient {
 
     public commandHandler: CommandHandler = new CommandHandler(this, {
         directory: join(__dirname, "..", "NeoCommandFiles"),
-        prefix: procces.env.PREFIX,
+        prefix: process.env.PREFIX,
         aliasReplacement: /-g/,
         allowMention: true,
         handleEdits: true,
