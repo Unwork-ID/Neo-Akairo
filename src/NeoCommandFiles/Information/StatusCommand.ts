@@ -6,11 +6,9 @@ import ms from "ms";
 import os from "os";
 
 import { Util } from "../../NeoUtils/NeoUtils";
-import Client from "../../NeoClient/NeoClient";
 
 export default class StatsCommand extends Command {
-    client: Client;
-    public constructor(client: Client) {
+    public constructor() {
         super("stats", {
             aliases: ["stats", "st"],
             category: "Core",
@@ -24,7 +22,6 @@ export default class StatsCommand extends Command {
             ratelimit: 3,
             channel: "guild"
         });
-        this.client = client;
     }
 
     public exec(message: Message): Promise<Message> {
@@ -74,7 +71,7 @@ export default class StatsCommand extends Command {
                     `**● Uptime: ** ${ms(this.client.music.nodes.first().stats.uptime)}`
                 ])
             // Don't delete this embed
-                .addField("\u200B", `| **[Website](https://tokisaki.xyz) | [GitHub](https://github.com/Enterprise-ID/Neo-Akairo) | [Discord](https://tokisaki.xyz/discord) | [Statcord](https://statcord.com/bot/472061789325230110) |**`)
+                .addField("\u200B", `| **[Website](https://tokisaki.xyz) | [GitHub](https://github.com/Enterprise-ID/Neo-Akairo) | [Discord](https://tokisaki.xyz/discord) | [Statcord](https://statcord.com/bot/${this.client.user.id}) |**`)
                 .setFooter(`Request for ${message.author.tag}`, message.author.avatarURL())
                 .setTimestamp()
         );
