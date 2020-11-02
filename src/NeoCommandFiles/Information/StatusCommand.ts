@@ -38,8 +38,8 @@ export default class StatsCommand extends Command {
                 .addField("General", [
                     `**● Name:** ${this.client.user.tag} (${this.client.user.id})`,
                     `**● Servers:** ${this.client.guilds.cache.size}`,
-                    `**● Users:** ${this.client.users.cache.size}`,
-                    `**● Channels:** ${this.client.channels.cache.size}`,
+                    `**● Users:** ${this.client.guilds.cache.reduce((a, b) => a + b.memberCount, 0)}`,
+                    `**● Channels:** ${this.client.guilds.cache.reduce((a, b) => a + b.channels.cache.size, 0)}`,
                     `**● Creation Date:** ${utc(this.client.user.createdTimestamp).format("Do MMMM YYYY HH:mm:ss")}`,
                     `**● Bot Uptime:** ${ms(process.uptime() * 1000, { long: true })}`,
                     `**● Node.js:** ${process.version}`,
