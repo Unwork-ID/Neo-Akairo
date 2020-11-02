@@ -1,7 +1,7 @@
 import { Command } from "discord-akairo";
 import type { Message } from "discord.js";
 import { MessageEmbed } from "discord.js";
-import { type } from "os";
+import util from 'util';
 import req from "snekfetch";
 
 export default class EvalCommand extends Command {
@@ -39,18 +39,10 @@ export default class EvalCommand extends Command {
 
         try {
 
-            const codes = code;
-            if (!codes) return;
-            var evaled;
-            if (codes.includes(`token`)) {
-                evaled = "トークンがありません";
-            } else {
-                evaled = eval(codes);
-            }
+            if (code.toLowerCase().includes("token")) return message.channel.send("トークンがありません")
+            var evaled = eval(code);
 
-            if (typeof evaled !== "string") { evaled = require("util").inspect(evaled, { depth: 0 }); }
-
-            const output = (evaled);
+            var output = util.inspect(evaled, { depth: 0});
             if (output.length > 1024) {
                 const { body } = await req.post("http://tk-bin.glitch.me/documents").send(output);
                 embed.addField("Output", `http://tk-bin.glitch.me/${body.key}.js`);
