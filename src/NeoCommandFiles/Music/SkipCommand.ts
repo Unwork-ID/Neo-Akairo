@@ -35,6 +35,6 @@ export default class SkipCommand extends Command {
 
         player.stop();
 
-        return message.channel.send(`Muisc Skip by: <@${message.author.id}>`);
+        return message.channel.send(`Music Skip by: <@${message.author.id}>`);
     }
 }
