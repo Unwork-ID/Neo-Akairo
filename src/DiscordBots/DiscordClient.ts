@@ -39,7 +39,6 @@ export default class DiscordBot {
 
     async topgg() {
         var guildSize = this.client.guilds.cache.size
-        var shardCount = this.client.ws.shards.size
         function on(value) {
             if(value === false) {
                 console.log(`[ TOP.GG ] Turn off, You can turn this on in config file if your bot on top.gg`)
@@ -47,7 +46,7 @@ export default class DiscordBot {
                 const dblapi = require('dblapi.js');
                 const dbl = new dblapi(`${process.env.TOP_GG}`,)
                 setInterval(() => {
-                    dbl.postStats(guildSize, shardCount)
+                    dbl.postStats(guildSize)
                 }, 1800000)
                 console.log(`[ TOP.GG ] Turn On, It'll update Turn On, It'll update server_count and shard_count every 30 minutes`)
             }
