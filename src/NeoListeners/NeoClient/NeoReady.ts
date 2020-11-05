@@ -28,5 +28,8 @@ export default class NeoReady extends Listener {
         })
 
         this.client.music.init(this.client.user.id)
+        this.client.discordbots.discordBoats();
+        this.client.discordbots.topgg();
+        this.client.discordbots.botsforDiscord();
     }
 }

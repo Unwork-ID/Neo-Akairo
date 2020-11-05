@@ -7,6 +7,7 @@ import { Logger } from 'winston';
 import { logger } from '../NeoUtils/NeoUtils';
 import ErelaServer from '../ErelaServer/ErelaClient';
 import StatCordServer from '../StatCord/Client';
+import DiscordBots from '../DiscordBots/DiscordClient';
 
 declare module 'discord-akairo' {
     interface AkairoClient {
@@ -15,6 +16,7 @@ declare module 'discord-akairo' {
         erela: ErelaServer;
         music: Manager;
         logger: Logger
+        discordbots: DiscordBots
 
     }
 }
@@ -63,8 +65,9 @@ export default class NeoClient extends AkairoClient {
         );
         this.erela = new ErelaServer(this);
         this.cord = new StatCordServer(this);
+        this.discordbots = new DiscordBots(this);
         this.config = config;
-        this.logger = logger
+        this.logger = logger;
     }
 
     public _init() {

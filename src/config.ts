@@ -12,3 +12,12 @@ export const PASSWORD: string = process.env.LAVAPASS;
 /* Spotify Credential */
 export const SpotifyClientID = `${process.env.SpotifyClientID}`;
 export const SpotifyClientSecret = `${process.env.SpotifyClientSecret}`;
+
+/* Discord Boats */
+export const DiscordBoatsOn: boolean = true
+
+/* Top.gg */
+export const TopggOn: boolean = true
+
+/* Bots For Discord */
+export const BotsForDiscord: boolean = true
