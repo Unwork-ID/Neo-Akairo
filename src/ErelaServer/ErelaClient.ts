@@ -49,6 +49,13 @@ export default class Erela {
                 const channel = this.client.channels.cache.get(player.textChannel) as TextChannel;
                 channel.send(`Queue has ended and im leaving, Matane~`);
                 player.destroy();
+            })
+            .on("playerMove", (player, oldChannel, newChannel) => {
+                if(!newChannel) {
+                    const channel = this.client.channels.cache.get(player.textChannel) as TextChannel;
+                    channel.send("I got kicked from the voice channel, and im clearing the queue.")
+                    player.destroy()
+                }
             });
     }
 }
