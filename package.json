@@ -44,7 +44,7 @@
     "discord.js": "^12.4.1",
     "dotenv": "^8.2.0",
     "erela.js": "^2.1.1",
-    "erela.js-spotify": "^1.1.0",
+    "erela.js-spotify": "^1.2.0",
     "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
     "node-spotify-api": "^1.1.1",
