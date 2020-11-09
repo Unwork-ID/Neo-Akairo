@@ -43,7 +43,7 @@
     "discord-akairo": "github:1Computer1/discord-akairo",
     "discord.js": "^12.4.1",
     "dotenv": "^8.2.0",
-    "erela.js": "^2.1.1",
+    "erela.js": "^2.2.0",
     "erela.js-spotify": "^1.1.0",
     "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
