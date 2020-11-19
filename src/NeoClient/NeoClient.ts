@@ -48,10 +48,10 @@ export default class NeoClient extends AkairoClient {
                 time: 30000,
             },
             otherwise: "",
-        },
+        }
     });
 
-    public listenerHandler: ListenerHandler = new ListenerHandler(this, { directory: join(__dirname, "..", "Neolisteners")});
+    public listenerHandler: ListenerHandler = new ListenerHandler(this, { directory: join(__dirname, "..", "NeoListeners")});
 
     public config: NeoOption;
 

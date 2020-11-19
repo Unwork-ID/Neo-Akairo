@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Enterprise-ID/Neo-Akairo.git"
+    "url": "git+https://github.com/Unwork-ID/Neo-Akairo.git"
   },
   "keywords": [
     "neoakairo",
@@ -24,9 +24,9 @@
   "author": "tokisaki13",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Enterprise-ID/Neo-Akairo/issues"
+    "url": "https://github.com/Unwork-ID/Neo-Akairo/issues"
   },
-  "homepage": "https://github.com/Enterprise-ID/Neo-Akairo#readme",
+  "homepage": "https://github.com/Unwork-ID/Neo-Akairo#readme",
   "devDependencies": {
     "@hazmi35/eslint-config": "^2.1.0",
     "@typescript-eslint/eslint-plugin": "^4.8.1",
