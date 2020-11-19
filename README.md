@@ -2,7 +2,7 @@
 
 ✨ Neo akairo Bot Discord Written In Typescript with module [Discord-Akairo](https://github.com/discord-akairo/) And [Discord.JS](https://github.com/discordjs) Made With ♥ By tokisaki13
 
-![NeoAkairo](https://cdn.discordapp.com/attachments/713193780932771891/762219735026499614/Enterprise-1080.png)
+![NeoAkairo](https://cdn.discordapp.com/attachments/713193780932771891/778798759718682695/unwork.png)
 
 ## Self Hosting Instruction
 
@@ -70,8 +70,8 @@
 * [tokisaki13](https://github.com/tokisaki13)
 * This Project Is Lisence Under [MIT Lisence](https://github.com/Enterprise-ID/Neo-Akairo/blob/master/LICENSE)
 * Don't forget to give stars on this project
-* [Invite The Protoype Bot For Review](https://discord.com/oauth2/authorize?client_id=472061789325230110&scope=bot&permissions=8)
-* [Share This Project Now!](https://github.com/Enterprise-ID/Neo-Akairo)
+* [Invite our prototype bot here](https://discord.com/oauth2/authorize?client_id=472061789325230110&scope=bot&permissions=8)
+* [Share this project now!](https://github.com/Enterprise-ID/Neo-Akairo)
 ## Become A Donator
 
 * Donate us to keep this project update and have more features
