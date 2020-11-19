@@ -9,8 +9,7 @@
 * First You need `Lavalink Server` [here](https://github.com/Frederikam/Lavalink) for reference of Lavalink Server
 * Make sure you have TypeScript installed on your PC/Laptop
 * To install TypeScript run `npm install -g typescript`
-* Configure your the `config.ts` on `src/config.ts`
-* Configure LavaServer on `src/EreleConnector/nodes.ts`
+* Configure LavaServer on `src/config.ts`
 * Then install the dependencise with `npm install --save`
 * If all done you can run `npm run dev`
 * If you run on VPS with pm2, you can use `pm2 start run.sh --name AppName`
