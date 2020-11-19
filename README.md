@@ -14,6 +14,7 @@
 * If all done you can run `npm run dev`
 * If you run on VPS with pm2, you can use `pm2 start run.sh --name AppName`
 * Then your bot ready to go
+* If you have any trouble with Selft Hosting you can join the support server [here](discord.gg/eaKKerC)
 
 ## Modules
 
