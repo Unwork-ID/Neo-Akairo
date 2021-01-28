@@ -1,3 +1,4 @@
+require('dotenv').config();
 import { Client } from 'statcord.js';
 
 import NeoClient from '../NeoClient/NeoClient';
@@ -10,7 +11,7 @@ export default class StatCord {
         const client = this.neo
         client.statcord = new Client({
             client,
-            key: "statcord.com-rAPIF5KNrjYDEgio8Cus",
+            key: process.env.STATCORD_KEY,
             postCpuStatistics: true,
             postMemStatistics: true,
             postNetworkStatistics: true
