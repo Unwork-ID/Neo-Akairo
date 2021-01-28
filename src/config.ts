@@ -6,7 +6,7 @@ export const owners: string[] = ["242969117479403520"];
 
 /* Lavalink Credential */
 export const HOST: string = process.env.LAVA_IP;
-export let PORT: number = 2333;
+export let PORT: number = 6666;
 export const PASSWORD: string = process.env.LAVA_PASS;
 
 /* Spotify Credential */
