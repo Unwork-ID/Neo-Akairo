@@ -732,13 +732,13 @@ stack-trace@0.0.x:
   resolved "https://registry.yarnpkg.com/stack-trace/-/stack-trace-0.0.10.tgz#547c70b347e8d32b4e108ea1a2a159e5fdde19c0"
   integrity sha1-VHxws0fo0ytOEI6hoqFZ5f3eGcA=
 
-statcord.js@^3.1.4:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/statcord.js/-/statcord.js-3.1.4.tgz#f3b2c5dc3dccc8b9d42f2fef68835331ef2e3228"
-  integrity sha512-T/aSCJtshov/eTLgWM/g9TkifyvtiL3u8fza1eq7fGIAg1FcMRW6r7wgn0RkffTfjQ/gKszlvkdeRUC4rGKLuA==
+statcord.js@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/statcord.js/-/statcord.js-3.2.0.tgz#6087664ccc221fadf02284a312ebba8c4babb8ad"
+  integrity sha512-FN9t7Z+GitsD41vLvvvhAEGHWh7PbuZ1FLU4OO9wSDVUEA6ggZV6jki4gWpRnEAYAlO9avUmsTXCsRTKz9qUPg==
   dependencies:
     node-fetch "^2.6.0"
-    systeminformation "^4.26.9"
+    systeminformation "^5.3.1"
 
 stealthy-require@^1.1.1:
   version "1.1.1"
@@ -783,10 +783,10 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-systeminformation@^4.26.9:
-  version "4.34.9"
-  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-4.34.9.tgz#70412e71ed755881930c0a7bbd831a905a7a362d"
-  integrity sha512-jvc4DlJeXazsen2riPDR97GSaHNCmoL+mgfB8IXxmpNpNd7kv5MfkuihXEmF1/prBFtqzUA2lxnt1qp4maOMQA==
+systeminformation@^5.3.1:
+  version "5.6.12"
+  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-5.6.12.tgz#cdb8338eef48c219352d95f2b0839f9ad5399fae"
+  integrity sha512-prJAt+iS2ITeygjLt/FGtN1qsIQHrRePCUqWtP0hGv6JsS0LSQTR+y5hWAd4frUIM/sjG95jHFUK1gx244KwUA==
 
 text-hex@1.0.x:
   version "1.0.0"
