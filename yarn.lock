@@ -344,19 +344,19 @@ forever-agent@~0.6.1:
   resolved "https://registry.yarnpkg.com/forever-agent/-/forever-agent-0.6.1.tgz#fbc71f0c41adeb37f96c577ad1ed42d8fdacca91"
   integrity sha1-+8cfDEGt6zf5bFd60e1C2P2sypE=
 
-form-data@^2.3.2:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/form-data/-/form-data-2.5.1.tgz#f2cbec57b5e59e23716e128fe44d4e5dd23895f4"
-  integrity sha512-m21N3WOmEEURgk6B9GLOE4RuWOFf28Lhh9qGYeNlGq4VDXUlJy2th2slBNU8Gp8EzloYZOibZJ7t5ecIrFSjVA==
-  dependencies:
-    asynckit "^0.4.0"
-    combined-stream "^1.0.6"
-    mime-types "^2.1.12"
-
 form-data@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/form-data/-/form-data-3.0.0.tgz#31b7e39c85f1355b7139ee0c647cf0de7f83c682"
   integrity sha512-CKMFDglpbMi6PyN+brwB9Q/GOw0eAnsrEZDgcsH5Krhz5Od/haKHAX0NmQfha2zPPz0JpWzA7GJHGSnvCRLWsg==
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.8"
+    mime-types "^2.1.12"
+
+form-data@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/form-data/-/form-data-4.0.0.tgz#93919daeaf361ee529584b9b31664dc12c9fa452"
+  integrity sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==
   dependencies:
     asynckit "^0.4.0"
     combined-stream "^1.0.8"
@@ -548,13 +548,13 @@ node-spotify-api@^1.1.1:
     request "^2.81.0"
     request-promise "^4.2.1"
 
-node-superfetch@^0.1.10:
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/node-superfetch/-/node-superfetch-0.1.10.tgz#f07cd7d048307495f98a1bcc879c18bc30790e7f"
-  integrity sha512-aM+4GmjwCSku1VLsVh/mjnxQHa3StRI8uB7eYSktstlMD6Dxvpk/tT6UFEg2NwlNPjLlwsFmexduNUahckCm2A==
+node-superfetch@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/node-superfetch/-/node-superfetch-0.2.3.tgz#bcbf4b03942134946248e3a96341c9e927fe292d"
+  integrity sha512-xOqifvw/3N+tIeeC80/TNJXkoxDZm8JWc7/0VBkJ86ttQTlJvoicuVaeJlKKHYRlmC2O6ygNIhNPwLYX4bxqdA==
   dependencies:
-    form-data "^2.3.2"
-    node-fetch "^2.6.0"
+    form-data "^4.0.0"
+    node-fetch "^2.6.1"
 
 oauth-sign@~0.9.0:
   version "0.9.0"
